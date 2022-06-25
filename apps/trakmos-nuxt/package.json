@@ -39,6 +39,9 @@
     "mongoose": "^6.3.4",
     "pinia": "^2.0.14",
     "vuetify": "3.0.0-alpha.12",
-    "@stakefrites/cosmos-directory" : "*"
+    "@stakefrites/cosmos-directory" : "*",
+    "@stakefrites/trakmos-types" : "*",
+    "@stakefrites/trakmos-schemas" : "*",
+    "@stakefrites/trakmosjs" : "*"
   }
 }

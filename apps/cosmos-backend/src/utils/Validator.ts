@@ -1,6 +1,6 @@
-import { CosmjsQueryClient } from '../types/Client';
-import CosmosDirectory from './CosmosDirectory';
-import { makeClient } from './utils';
+import { CosmjsQueryClient } from "@stakefrites/trakmos-types";
+import { CosmosDirectory } from "@stakefrites/cosmos-directory";
+import { makeClient } from "@stakefrites/trakmosjs";
 
 const directory = new CosmosDirectory();
 
@@ -28,7 +28,7 @@ export class ValidatorHandler {
     address: string,
     network: string
   ): Promise<ValidatorHandler> {
-    const client = await makeClient('https://rpc.evmos.ezstaking.io');
+    const client = await makeClient("https://rpc.evmos.ezstaking.io");
     const chain = await directory.getChain(network);
     const handler = new ValidatorHandler(
       address,
@@ -58,7 +58,7 @@ export class ValidatorHandler {
               );
         firstRun = false;
         if (!delegators.pagination) {
-          console.log('noting');
+          console.log("noting");
           return;
         }
         dels.push(delegators.delegationResponses);

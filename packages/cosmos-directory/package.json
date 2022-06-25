@@ -12,6 +12,6 @@
     "axios": "0.27.2"
   },
   "scripts": {
-    "build": "tsc ./src/index.ts"
+    "build": "tsc"
   }
 }

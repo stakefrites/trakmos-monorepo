@@ -1,9 +1,9 @@
 import express from "express";
 
-import { AccountHandler } from "../../utils/Wallet";
+import { AccountHandler } from "@stakefrites/trakmosjs";
 import { DatabaseHandler } from "../../db/controller";
 
-import { IAccountConfig } from "../../types/Wallet";
+import { IAccountConfig } from "@stakefrites/trakmos-types";
 
 interface ICreateAccount {
   accounts: IAccountConfig[];

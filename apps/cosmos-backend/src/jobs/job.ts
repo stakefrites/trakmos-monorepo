@@ -11,11 +11,10 @@ const cron = require("cronitor")(process.env.CRONITOR_API_KEY, {
 cron.wraps(nodeCron);
 
 import { DatabaseHandler } from "../db/controller";
-import CosmosDirectory from "../utils/CosmosDirectory";
+import { CosmosDirectory } from "@stakefrites/cosmos-directory";
 import { Price } from "../utils/Price";
-import { AccountHandler } from "../utils/Wallet";
-import { mapAsync, sleep } from "../utils/utils";
-import { IToken } from "../types/Wallet";
+import { AccountHandler, mapAsync, sleep } from "@stakefrites/trakmosjs";
+import { IToken } from "@stakefrites/trakmos-types";
 
 const db = new DatabaseHandler();
 const directory = new CosmosDirectory();
