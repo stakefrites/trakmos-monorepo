@@ -1,9 +1,6 @@
 import express from "express";
 
 import { DatabaseHandler } from "../db/controller";
-import { Price } from "../utils/Price";
-
-import { IToken } from "../types/Wallet";
 
 const router = express.Router();
 

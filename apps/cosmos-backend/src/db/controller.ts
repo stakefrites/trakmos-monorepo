@@ -1,11 +1,13 @@
-import * as dotenv from 'dotenv';
-import mongoose from 'mongoose';
+import * as dotenv from "dotenv";
+import mongoose from "mongoose";
 
-import { IAccount, IToken, IUser } from '../types/Wallet';
-import { AccountModel, TokenModel, UserModel } from './models';
+import { IAccount, IToken, IUser } from "@stakefrites/trakmos-types";
+import { AccountModel, TokenModel, UserModel } from "./models";
 
 dotenv.config();
-mongoose.connect(process.env.MONGO_DB_URI || 'mongodb+srv://localhost:27017').then(r => console.log('connected'));
+mongoose
+  .connect(process.env.MONGO_DB_URI || "mongodb+srv://localhost:27017")
+  .then((r) => console.log("connected"));
 
 export class DatabaseHandler {
   createUser = async (u: IUser) => {
