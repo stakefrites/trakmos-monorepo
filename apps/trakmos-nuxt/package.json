@@ -1,0 +1,44 @@
+{
+  "name": "@stakefrites/trakmos-nuxt",
+    "version": "0.0.0",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint --ext .ts,.js,.vue ."
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.18.2",
+    "@mdi/font": "^6.6.96",
+    "@nuxtjs/eslint-config-typescript": "^10.0.0",
+    "@nuxtjs/eslint-module": "^3.1.0",
+    "@types/bcrypt": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
+    "@vue/eslint-config-standard": "^7.0.0",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^9.1.1",
+    "nuxt": "3.0.0-rc.1",
+    "prettier": "^2.7.1",
+    "sass": "^1.51.0"
+  },
+  "dependencies": {
+    "@cosmjs/encoding": "^0.28.4",
+    "@cosmjs/stargate": "^0.28.4",
+    "@cosmjs/tendermint-rpc": "^0.28.4",
+    "@pinia/nuxt": "^0.1.9",
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "lightweight-charts": "^3.8.0",
+    "material-design-icons-iconfont": "^6.7.0",
+    "mdi": "^2.2.43",
+    "mongoose": "^6.3.4",
+    "pinia": "^2.0.14",
+    "vuetify": "3.0.0-alpha.12",
+    "@stakefrites/cosmos-directory" : "*"
+  }
+}
