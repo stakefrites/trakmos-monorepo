@@ -7,5 +7,9 @@
   "workspaces": [
     "packages/*",
     "apps/*"
-  ]
+  ],
+  "devDependencies": {
+    "nx": "14.3.6",
+    "@nrwl/nx-cloud": "latest"
+  }
 }
