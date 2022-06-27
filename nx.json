@@ -1,0 +1,32 @@
+{
+  "extends": "nx/presets/npm.json",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "dev",
+          "dev:snapshot",
+          "dev:debug",
+          "lint",
+          "format",
+          "build",
+          "generate",
+          "preview"
+        ],
+        "accessToken": "NzZkNDQ0NmYtMTg4Yy00YTY1LWE2NWUtOWZkMjBlNGFjYjBmfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "npmScope": "stakefrites",
+  "targetDefaults": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
+  },
+  "affected": {
+    "defaultBase": "main"
+  }
+}

@@ -1,7 +1,5 @@
 import mongoose from 'mongoose'
 
-import { IAccount, IToken, IUser } from '@stakefrites/trakmos-types'
-
 // @TODO: Update schema after adding the helper function that gets the normalized data
 export const accountSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', unique: true },
@@ -16,7 +14,7 @@ export const userSchema = new mongoose.Schema({
   password: { type: String, required: true }
 })
 
-export const tokenSchema = new mongoose.Schema<IToken>({
+export const tokenSchema = new mongoose.Schema({
   coingeckoId: {
     type: String
   },

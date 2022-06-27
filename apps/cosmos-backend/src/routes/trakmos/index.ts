@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 
 import AuthRouter from "./auth";
 import AccountRouter from "./account";

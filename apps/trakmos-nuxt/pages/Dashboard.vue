@@ -6,16 +6,18 @@ const { id, user, tokens } = storeToRefs(store)
 const router = useRouter()
 
 const account = reactive({})
+const BASE_URL = 'https://api.trakmos.com'
 
-  const { data, error } = await useFetch(`/api/account/${id.value}`, {
-    method: 'GET',
-  })
+const { data, error } = await useFetch(`/trakmos/account/${id.value}`, {
+  baseUrl: BASE_URL,
+  method: 'GET'
+})
 
-  if (error.value) {
-    console.log('An error has occured!\n%j' , error.value)
-  }
+if (error.value) {
+  console.log('An error has occured!\n%j', error.value)
+}
 
-  account.value = data.value.account
+account.value = data.value.account
 
 const tokenValue = (t) => {
   const found = tokens.value.find((to) => to.base === t.denom)
@@ -55,8 +57,12 @@ const formatCurrency = (value, currency) => {
         <v-card>
           <v-col v-for="acc in account.value.accounts">
             <div class="text-h4">{{ acc.name }}</div>
-            <div class="text-body-1"><strong>Bech32 (118):</strong> {{ acc.bech32Address }}</div>
-            <div class="text-body-1"><strong>Evmos:</strong> {{ acc.evmosAddress }}</div>
+            <div class="text-body-1">
+              <strong>Bech32 (118):</strong> {{ acc.bech32Address }}
+            </div>
+            <div class="text-body-1">
+              <strong>Evmos:</strong> {{ acc.evmosAddress }}
+            </div>
           </v-col>
         </v-card>
       </v-col>
@@ -75,7 +81,11 @@ const formatCurrency = (value, currency) => {
           <tbody>
             <tr v-for="token in account.value.tokens.total">
               <td>
-                <v-img width="35" v-if="tokenImage(token)" :src="tokenImage(token)"></v-img>
+                <v-img
+                  width="35"
+                  v-if="tokenImage(token)"
+                  :src="tokenImage(token)"
+                ></v-img>
               </td>
               <td>{{ tokenName(token) }}</td>
               <td>{{ token.amount.toFixed(2) }}</td>

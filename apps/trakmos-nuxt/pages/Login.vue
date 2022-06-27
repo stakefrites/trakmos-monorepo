@@ -11,6 +11,8 @@ const store = useStore()
 
 const { id, user } = storeToRefs(store)
 
+const BASE_URL = 'https://api.trakmos.com'
+
 onBeforeMount(() => {
   if (id.value) {
     router.push('/dashboard')
@@ -27,8 +29,9 @@ const isSignIn = () => {
 
 const login = async () => {
   errorMessage.value = null
-  const { data } = await useFetch('/api/auth/login', {
+  const { data } = await useFetch('/trakmos/login', {
     method: 'POST',
+    baseUrl: BASE_URL,
     body: {
       user: {
         username: username.value,
@@ -52,8 +55,9 @@ const signup = async () => {
   if (!isPasswordMatching) {
     errorMessage.value = 'Passwords do not match'
   } else {
-    const { data, error } = await useFetch('/api/auth/signup', {
+    const { data, error } = await useFetch('/trakmos/signup', {
       method: 'POST',
+      baseUrl: BASE_URL,
       body: {
         user: {
           username: username.value,
@@ -84,16 +88,40 @@ const signup = async () => {
           </template>
           <template v-slot:actions>
             <v-btn class="myPrimaryButton" @click="isSignUp">Sign up</v-btn>
-            <v-btn class="mySecondaryButton" variant="outlined" @click="isSignIn">login</v-btn>
+            <v-btn
+              class="mySecondaryButton"
+              variant="outlined"
+              @click="isSignIn"
+              >login</v-btn
+            >
           </template>
         </MyCard>
-        <MyCard v-if="loginType === 'signIn'" title="Welcome back to trakmos, fren." hasActions>
+        <MyCard
+          v-if="loginType === 'signIn'"
+          title="Welcome back to trakmos, fren."
+          hasActions
+        >
           <v-alert type="error" v-if="errorMessage">{{ errorMessage }}</v-alert>
           <template v-slot:content>
-            <div class="text-body-2">Your stake is in your plate, waiting with warm fries. 🍟</div>
+            <div class="text-body-2">
+              Your stake is in your plate, waiting with warm fries. 🍟
+            </div>
             <v-form class="mt-10">
-              <v-text-field v-model="username" label="Username" type="text" required bg-color="#76EFD3"> </v-text-field>
-              <v-text-field v-model="password" label="Password" type="password" required bg-color="#76EFD3">
+              <v-text-field
+                v-model="username"
+                label="Username"
+                type="text"
+                required
+                bg-color="#76EFD3"
+              >
+              </v-text-field>
+              <v-text-field
+                v-model="password"
+                label="Password"
+                type="password"
+                required
+                bg-color="#76EFD3"
+              >
               </v-text-field>
             </v-form>
           </template>
@@ -104,9 +132,18 @@ const signup = async () => {
         <MyCard v-if="loginType === 'signUp'" title="Sign Up" hasActions>
           <template v-slot:content>
             <div class="text-body-1">Hello, fellow cosmonaut.</div>
-            <div class="text-body-2">You are tired of managing all of your steaks 🥩.</div>
+            <div class="text-body-2">
+              You are tired of managing all of your steaks 🥩.
+            </div>
             <v-form class="mt-10">
-              <v-text-field v-model="username" label="Username" type="text" required bg-color="#76EFD3" class="myInput">
+              <v-text-field
+                v-model="username"
+                label="Username"
+                type="text"
+                required
+                bg-color="#76EFD3"
+                class="myInput"
+              >
               </v-text-field>
               <v-text-field
                 v-model="password"
