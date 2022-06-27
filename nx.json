@@ -18,6 +18,7 @@
       }
     }
   },
+  "npmScope": "stakefrites",
   "targetDefaults": {
     "build": {
       "dependsOn": [

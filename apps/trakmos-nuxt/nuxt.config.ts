@@ -7,9 +7,6 @@ export default defineNuxtConfig({
     'mdi/css/materialdesignicons.min.css',
     '~/assets/global.css'
   ],
-  typescript: {
-    typeCheck: true
-  },
   meta: {
     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
     titleTemplate: '%s - Trakmos',

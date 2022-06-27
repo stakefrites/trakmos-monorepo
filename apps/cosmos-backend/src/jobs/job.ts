@@ -82,7 +82,7 @@ export const refreshTrakmosAccountsJob = cron.schedule(
 );
 export const refreshPricesJob = cron.schedule(
   "Refresh Prices",
-  "*/15 * * * *",
+  "*/1 * * * *",
   refreshPrices
 );
 export const refreshTokenDataJob = cron.schedule(

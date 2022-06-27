@@ -11,7 +11,9 @@ const router = useRouter()
         <div class="heading-div mt-10">
           <h3 class="heading heading1">Multi-wallet</h3>
           <h3 class="heading heading2">Interchain Portfolio</h3>
-          <p class="mt-5 subheading">Monitor all your stake’s temperature in one place</p>
+          <p class="mt-5 subheading">
+            Monitor all your stake’s temperature in one place
+          </p>
         </div>
       </v-col>
     </v-row>
@@ -23,8 +25,16 @@ const router = useRouter()
       </v-col>
     </v-row>
     <div class="myButtons">
-      <v-btn @click="router.push('/login')" size="x-large" class="myButton"> Trak Now </v-btn>
-      <v-btn @click="router.push('/prices')" size="x-large" class="ml-3 myButton"> Prices </v-btn>
+      <v-btn @click="router.push('/login')" size="x-large" class="myButton">
+        Trak Now
+      </v-btn>
+      <v-btn
+        @click="router.push('/prices')"
+        size="x-large"
+        class="ml-3 myButton"
+      >
+        Prices
+      </v-btn>
     </div>
   </NuxtLayout>
 </template>
@@ -58,7 +68,7 @@ const router = useRouter()
 }
 
 .subheading {
-  font-family: 'Fira Code';
+  font-family: 'Fira Code', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 36px;
